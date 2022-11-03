@@ -29,7 +29,6 @@ namespace CurrencyExchanger
             InitializeComponent();
             var mainViewModel = new MainViewModel();
             DataContext = mainViewModel;
-            mainViewModel.RenderTop();
             initTabBar();
         }
 

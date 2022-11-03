@@ -17,7 +17,7 @@ namespace CurrencyExchanger.MVVM
 {
     internal class MainViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Currency> Currencies { get; set; }
+        public ObservableCollection<Currency> Currencies { get; set; } 
 
         private Currency selectedCurrency;
         public Currency SelectedCurrency
@@ -29,7 +29,7 @@ namespace CurrencyExchanger.MVVM
                 OnPropertyChanged("SelectedCurrency");
             }
         }
-        public void RenderTop()
+        public MainViewModel()
         {
             string json;
             using (WebClient wc = new WebClient())
@@ -39,36 +39,29 @@ namespace CurrencyExchanger.MVVM
             json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
             Currencies = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
         }
-        public void Search1(string search)
+
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
         {
-            string json;
-            using (WebClient wc = new WebClient())
+            get
             {
-                json = wc.DownloadString("https://api.coincap.io/v2/assets?limit=7&search="+search);
+                
+                return addCommand ??
+                  (addCommand = new RelayCommand(obj =>
+                  {
+                      Currencies.Clear();
+                      string search = obj as string;
+                      string json;
+                      using (WebClient wc = new WebClient())
+                      {
+                           json = wc.DownloadString("https://api.coincap.io/v2/assets?limit=7&search="+search);
+                      }
+                      json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
+                      var temp = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
+                      foreach (var item in temp)
+                      Currencies.Add(item);
+                  }));
             }
-            json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
-            Currencies = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
-        }
-
-        public void Search(string search)
-        {
-            Currencies.Clear();
-            Task.Factory.StartNew(() =>
-            {
-                string json;
-                using (WebClient wc = new WebClient())
-                {
-                    json = wc.DownloadString("https://api.coincap.io/v2/assets?limit=7&search=" + search);
-                }
-                json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
-                return JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
-            }).ContinueWith(task =>
-            {
-                //add the results to the source collection
-                foreach (var result in task.Result)
-                    Currencies.Add(result);
-
-            }, System.Threading.CancellationToken.None, TaskContinuationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

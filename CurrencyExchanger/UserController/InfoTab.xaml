@@ -10,10 +10,9 @@
         <StackPanel Orientation="Horizontal" Margin="10" >
             <Label Content="Search by name : " HorizontalContentAlignment="Center" Height="25"></Label>
             <TextBox x:Name="Textbox" Width="150" Height="30" Margin="15"></TextBox>
-            <Button Width="100" Height="30" Content="Search" Click="Button_Search_Click"></Button>
+            <Button Width="100" Height="30" Content="Search"  Command="{Binding AddCommand}" CommandParameter="{Binding Text,ElementName=Textbox}"></Button>
         </StackPanel>
-        <ListBox Grid.Column="0" ItemsSource="{Binding Currencies}" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="450"
-                 SelectedItem="{Binding SelectedCurrency}">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Currencies}" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="450">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">

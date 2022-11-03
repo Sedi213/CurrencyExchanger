@@ -30,10 +30,5 @@ namespace CurrencyExchanger.UserController
            
         }
 
-        private void Button_Search_Click(object sender, RoutedEventArgs e)
-        {
-            Model.Search(Textbox.Text);
-            
-        }
     }
 }
