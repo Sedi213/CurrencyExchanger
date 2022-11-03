@@ -7,7 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UserController\InfoTab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserController\TabMain.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserController\InfoTab.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserController\TabMain.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

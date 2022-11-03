@@ -48,9 +48,11 @@ namespace CurrencyExchanger
 
         public string explorer { get; set; }
 
-        
+        public string volumeUsd24Hr { get; set; }
 
-
+        public string vwap24Hr { get; set; }
+        public string changePercent24Hr { get; set; }
+        public string supply { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

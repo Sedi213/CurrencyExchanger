@@ -16,43 +16,9 @@
     </Window.Resources>
     <Grid>
         <TabControl>
-            <TabItem Header="Home">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="0.8*" />
-                    </Grid.ColumnDefinitions>
-
-                    <ListBox Grid.Column="0" ItemsSource="{Binding Currencies}"
-                 SelectedItem="{Binding SelectedCurrency}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="5">
-                                    <TextBlock FontSize="18" Text="{Binding Path=Name}" />
-                                    <TextBlock Text="{Binding Path=Id}" />
-                                    <TextBlock Text="{Binding Path=Price}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-
-                    <StackPanel Grid.Column="1" DataContext="{Binding SelectedCurrency}">
-                        <TextBlock Text="Selected item"  />
-                        <TextBlock Text="Name" />
-                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Currency Code" />
-                        <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Price" />
-                        <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Price" />
-                        <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBlock Text="Explorer" />
-                        <TextBox Text="{Binding explorer, UpdateSourceTrigger=PropertyChanged}" />
-                    </StackPanel>
-                </Grid>
+            <TabItem x:Name="MainTab" Header="Home">
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem x:Name="MoreInfoTab" Header="Info">
             </TabItem>
         </TabControl>
 

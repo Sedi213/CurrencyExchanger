@@ -40,5 +40,7 @@ C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\ne
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\CurrencyExchanger.pdb
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\CurrencyExchanger.genruntimeconfig.cache
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\ref\CurrencyExchanger.dll
-C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
-C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\CurrencyExchanger.csproj.CopyComplete
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\UserController\TabMain.g.cs
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\UserController\TabMain.baml
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\UserController\InfoTab.g.cs
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\UserController\InfoTab.baml

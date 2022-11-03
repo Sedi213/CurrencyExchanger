@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CurrencyExchanger.MVVM;
+using CurrencyExchanger.UserController;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -25,10 +27,16 @@ namespace CurrencyExchanger
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new AppViewModel();
+            var mainViewModel = new MainViewModel();
+            DataContext = mainViewModel;
+            mainViewModel.RenderTop();
+            initTabBar();
+        }
 
-           
-
+        private void initTabBar()
+        {
+            MainTab.Content = new TabMain();
+            MoreInfoTab.Content = new InfoTab();
         }
     }
 }
