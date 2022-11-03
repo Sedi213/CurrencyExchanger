@@ -40,14 +40,14 @@ namespace CurrencyExchanger.MVVM
             Currencies = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
         }
 
-        private RelayCommand addCommand;
-        public RelayCommand AddCommand
+        private RelayCommand searchCommand;
+        public RelayCommand SearchCommand
         {
             get
             {
                 
-                return addCommand ??
-                  (addCommand = new RelayCommand(obj =>
+                return searchCommand ??
+                  (searchCommand = new RelayCommand(obj =>
                   {
                       Currencies.Clear();
                       string search = obj as string;
