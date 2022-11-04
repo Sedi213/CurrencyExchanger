@@ -5,20 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurrencyExchanger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14" />
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="14" />
-        </Style>
-    </Window.Resources>
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" >
     <Grid>
         <TabControl>
             <TabItem x:Name="MainTab" Header="Home">
             </TabItem>
             <TabItem x:Name="MoreInfoTab" Header="Info">
+            </TabItem>
+            <TabItem x:Name="ConventorTab" Header="Conventor">
             </TabItem>
         </TabControl>
 

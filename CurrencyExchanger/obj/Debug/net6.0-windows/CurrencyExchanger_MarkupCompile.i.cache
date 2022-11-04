@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\App.xaml
-3-1833609404
+61205529350
 
-10-958846152
+11-1791329834
 194618410957
-MainWindow.xaml;UserController\InfoTab.xaml;UserController\TabMain.xaml;
+MainWindow.xaml;ThemesApp\Dark.xaml;ThemesApp\Light.xaml;UserController\CurrencyConvertor.xaml;UserController\InfoTab.xaml;UserController\TabMain.xaml;
 
 True
 

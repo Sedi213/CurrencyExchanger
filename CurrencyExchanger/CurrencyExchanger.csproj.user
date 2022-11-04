@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="UserController\CurrencyConvertor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserController\InfoTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,7 +18,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ThemesApp\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ThemesApp\Light.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserController\CurrencyConvertor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserController\InfoTab.xaml">

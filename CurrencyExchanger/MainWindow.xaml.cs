@@ -36,6 +36,7 @@ namespace CurrencyExchanger
         {
             MainTab.Content = new TabMain();
             MoreInfoTab.Content = new InfoTab();
+            ConventorTab.Content = new CurrencyConvertor();
         }
     }
 }

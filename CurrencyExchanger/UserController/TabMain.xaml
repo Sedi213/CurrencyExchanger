@@ -27,15 +27,15 @@
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedCurrency}">
             <TextBlock Text="Selected item"  />
             <TextBlock Text="Name" />
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
             <TextBlock Text="Currency Code" />
-            <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
             <TextBlock Text="Price" />
-            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="Price" />
-            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="Explorer" />
-            <TextBox Text="{Binding explorer, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+            <TextBlock Text="Quantity of trading volume represented in USD over the last 24 hours" />
+            <TextBox Text="{Binding Path=volumeUsd24Hr}" IsReadOnly="True"/>
+            <TextBlock Text="Volume Weighted Average Price in the last 24 hours : " />
+            <TextBox Text="{Binding Path=vwap24Hr}" IsReadOnly="True"/>
         </StackPanel>
     </Grid>
 </UserControl>

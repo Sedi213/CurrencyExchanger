@@ -1,6 +1,7 @@
 ﻿using CurrencyExchanger.MVVM;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,15 @@ namespace CurrencyExchanger.UserController
             DataContext = Model;
            
         }
-
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            using (Process process = new Process())
+            {
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.FileName = e.Uri.AbsoluteUri;
+                process.Start();
+            }
+            e.Handled = true;
+        }
     }
 }

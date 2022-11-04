@@ -31,13 +31,19 @@ namespace CurrencyExchanger.MVVM
         }
         public MainViewModel()
         {
+            Currencies = new ObservableCollection<Currency>();
+            GetApi("https://api.coincap.io/v2/assets?limit=7"); 
+        }
+
+        public void GetApi(string get)
+        {
             string json;
             using (WebClient wc = new WebClient())
-            {
-                json = wc.DownloadString("https://api.coincap.io/v2/assets?limit=7");
-            }
+                json = wc.DownloadString(get); 
             json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
-            Currencies = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
+            var temp = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
+            foreach (var item in temp)
+                Currencies.Add(item);
         }
 
         private RelayCommand searchCommand;
@@ -45,24 +51,16 @@ namespace CurrencyExchanger.MVVM
         {
             get
             {
-                
                 return searchCommand ??
                   (searchCommand = new RelayCommand(obj =>
                   {
                       Currencies.Clear();
                       string search = obj as string;
-                      string json;
-                      using (WebClient wc = new WebClient())
-                      {
-                           json = wc.DownloadString("https://api.coincap.io/v2/assets?limit=7&search="+search);
-                      }
-                      json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
-                      var temp = JsonSerializer.Deserialize<ObservableCollection<Currency>>(json);
-                      foreach (var item in temp)
-                      Currencies.Add(item);
+                      GetApi("https://api.coincap.io/v2/assets?limit=7&search="+search);
                   }));
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
