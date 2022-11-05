@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CurrencyExchanger.UserController"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Style="{StaticResource {x:Type UserControl}}">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="800" Style="{DynamicResource {x:Type UserControl}}">
+    <Grid x:Name="grid">
         <StackPanel HorizontalAlignment="Center"  Margin="40" Background="DarkOrange" Orientation="Horizontal" VerticalAlignment="Top">
             <TextBox x:Name="InputText" Text="1" Margin="15" Width="50" MaxLength="5" Background="White" ></TextBox>
             <ComboBox x:Name="ConverOn" ItemsSource="{Binding Currencies}" Height="25" Width="100" SelectedIndex="0" SelectionChanged="Conver_SelectionChanged">
@@ -29,7 +29,11 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="100">
             <Label >Theme mode :</Label>
             <RadioButton x:Name="Light" Content="Light" VerticalAlignment="Center"  GroupName="Mode" Checked="RadioChecked" IsChecked="True"/>
-            <RadioButton x:Name="Dark" Content="Dark"   VerticalAlignment="Center"  Checked="RadioChecked"  GroupName="Mode"/>
+            <RadioButton x:Name="Dark" Content="Dark"   Margin="5" VerticalAlignment="Center"  Checked="RadioChecked"  GroupName="Mode"/>
         </StackPanel>
+        <Line X1="160" Y1="350" X2="160" Y2="150" Stroke="Black"></Line>
+        <Line X1="160" Y1="150" X2="615" Y2="150" Stroke="Black"></Line>
+        <Line X1="160" Y1="350" X2="615" Y2="350" Stroke="Black"></Line>
+        <Line X1="615" Y1="350" X2="615" Y2="150" Stroke="Black"></Line>
         </Grid>
 </UserControl>

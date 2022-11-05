@@ -48,3 +48,5 @@ C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\ne
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\UserController\CurrencyConvertor.baml
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\bin\Debug\net6.0-windows\CurrencyExchanger.dll.config
 C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\App.baml
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\Themes\Dark.baml
+C:\Users\Sedma\Documents\GitHub\CurrencyExchanger\CurrencyExchanger\obj\Debug\net6.0-windows\Themes\Light.baml

@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +29,24 @@ namespace CurrencyExchanger.UserController
             InitializeComponent();
             DataContext = mainViewModel;
             mainViewModel.GetApi("https://api.coincap.io/v2/assets");
+            RenderCandels();
+        }
+
+        private void RenderCandels()
+        {
+
+            var Candel = mainViewModel.GiveCandels();
+            for (int i = 0; i < Candel.Length-1; i++)
+            {
+                Line temp = new Line();
+                temp.X1 = i * 3+160;
+                temp.Y1=580- Double.Parse(Candel[i].open)*5300;
+                temp.X2= (i+1)*3+160;
+                temp.Y2 =580- Double.Parse(Candel[i+1].open)*5300;
+                temp.Stroke = Brushes.Blue;
+                grid.Children.Add(temp);
+            }
+
         }
 
         private void Conver_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -46,8 +65,10 @@ namespace CurrencyExchanger.UserController
 
         private void RadioChecked(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.ColorMode=((RadioButton)sender).Content.ToString();
-            Properties.Settings.Default.Save();
+            Application.Current.Resources.MergedDictionaries.Clear();
+           Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("/Themes/"+((RadioButton)sender).Content.ToString()+".xaml", UriKind.RelativeOrAbsolute) });
         }
+
+        
     }
 }

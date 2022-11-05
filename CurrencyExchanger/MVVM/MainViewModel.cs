@@ -11,7 +11,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Media3D;
 using System.Xml.Linq;
+using CurrencyExchanger.Api;
 
 
 namespace CurrencyExchanger.MVVM
@@ -31,7 +33,14 @@ namespace CurrencyExchanger.MVVM
             }
         }
 
-        
+        public Candles[] GiveCandels()
+        {
+            string json;
+            using (WebClient wc = new WebClient())
+                json = wc.DownloadString("https://api.coincap.io/v2/candles?exchange=poloniex&interval=h4&baseId=ethereum&quoteId=bitcoin");
+            json = json.Remove(json.Length - 27, 27).Remove(0, 8);//Prepared for deserialize
+            return JsonSerializer.Deserialize<Candles[]>(json);
+        }
 
         public MainViewModel()
         {
@@ -73,3 +82,4 @@ namespace CurrencyExchanger.MVVM
         }
     }
 }
+record Candles(string open);

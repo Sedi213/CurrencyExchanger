@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CurrencyExchanger.UserController"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Style="{StaticResource {x:Type UserControl}}">
+             d:DesignHeight="450" d:DesignWidth="800" Style="{DynamicResource {x:Type UserControl}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -26,13 +26,13 @@
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedCurrency}">
             <TextBlock Text="Selected item"  />
-            <TextBlock Text="Name" />
+            <TextBlock Text="Name"/>
             <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
             <TextBlock Text="Currency Code" />
             <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
             <TextBlock Text="Price" />
             <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
-            <TextBlock Text="Quantity of trading volume represented in USD over the last 24 hours" />
+            <TextBlock Text="Trading volume represented in USD over the last 24 hours"/>
             <TextBox Text="{Binding Path=volumeUsd24Hr}" IsReadOnly="True"/>
             <TextBlock Text="Volume Weighted Average Price in the last 24 hours : " />
             <TextBox Text="{Binding Path=vwap24Hr}" IsReadOnly="True"/>

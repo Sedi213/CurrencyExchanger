@@ -5,39 +5,10 @@
              xmlns:properties="clr-namespace:CurrencyExchanger.Properties"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="{x:Type UserControl}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
-                    <Setter Property="Background" Value="White"/>
-                </DataTrigger>
-                
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="DimGray"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="{x:Type ListBox}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
-                    <Setter Property="Background" Value="White"/>
-                </DataTrigger>
-
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="DimGray"/>
-
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="{x:Type TextBox}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
-                    <Setter Property="Background" Value="White"/>
-                </DataTrigger>
-
-                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
-                    <Setter Property="Background" Value="DimGray"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
+        <ResourceDictionary x:Name="ThemeDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/Light.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
