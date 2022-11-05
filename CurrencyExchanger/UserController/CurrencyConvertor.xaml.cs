@@ -30,11 +30,8 @@ namespace CurrencyExchanger.UserController
             mainViewModel.GetApi("https://api.coincap.io/v2/assets");
         }
 
-
-
         private void Conver_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             try
             {
                 double count = double.Parse(InputText.Text);
@@ -45,6 +42,12 @@ namespace CurrencyExchanger.UserController
             {
                 OutputLabel.Content = "Input invalid";
             }
+        }
+
+        private void RadioChecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode=((RadioButton)sender).Content.ToString();
+            Properties.Settings.Default.Save();
         }
     }
 }

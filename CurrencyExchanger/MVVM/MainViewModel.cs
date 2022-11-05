@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Linq;
 
 
@@ -29,6 +30,9 @@ namespace CurrencyExchanger.MVVM
                 OnPropertyChanged("SelectedCurrency");
             }
         }
+
+        
+
         public MainViewModel()
         {
             Currencies = new ObservableCollection<Currency>();

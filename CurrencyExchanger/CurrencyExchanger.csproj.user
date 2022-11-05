@@ -18,12 +18,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ThemesApp\Dark.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ThemesApp\Light.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
