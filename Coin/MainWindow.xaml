@@ -1,0 +1,67 @@
+﻿<Window x:Class="Coin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:viewModel="clr-namespace:Coin.MVVM.ViewModel"
+        xmlns:local="clr-namespace:Coin"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="COIN"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                        Foreground="White"
+                       FontSize="22"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Top 7"
+                             Height="50"
+                             FontSize="14"
+                             Foreground="White"
+                             Style="{StaticResource MenuButtonStyle}"
+                             IsChecked="True"
+                             Command="{Binding TopVMComand}"/>
+                <RadioButton Content="Search"
+                             Height="50"
+                             FontSize="14"
+                             Foreground="White"
+                             Style="{StaticResource MenuButtonStyle}"
+                             Command="{Binding SearchVMComand}"/>
+                <RadioButton Content="Conventor"
+                             Height="50"
+                             FontSize="14"
+                             Foreground="White"
+                             Style="{StaticResource MenuButtonStyle}"
+                             Command="{Binding ConvertorVMComand}"/>
+            </StackPanel>
+            <ContentControl Grid.Row="1" Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+
+
+        </Grid>
+    </Border>
+</Window>
