@@ -22,6 +22,16 @@ namespace Coin.MVVM.ViewModel
             Currencies = CurrencyAPI.GetApi("https://api.coincap.io/v2/assets");
 
         }
+        private string textSearch;
+
+        public string TextSearch
+        {
+            get { return textSearch; }
+            set { textSearch = value;
+                OnPropertyChanged(nameof(TextSearch));
+                SearchCommand.Execute(textSearch);
+            }
+        }
 
         private RelayCommand searchCommand;
         public RelayCommand SearchCommand

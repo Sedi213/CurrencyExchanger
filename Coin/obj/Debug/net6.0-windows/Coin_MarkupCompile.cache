@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Sedma\source\repos\Coin\Coin\App.xaml
-6390971562
+5452958034
 
 141701752020
 194-2004305220
-MainWindow.xaml;MVVM\View\ConvertorView.xaml;MVVM\View\SearchView.xaml;MVVM\View\TopView.xaml;Themes\MenuButtonStyle.xaml;Themes\TextBoxStyle.xaml;
+MainWindow.xaml;MVVM\View\ConvertorView.xaml;MVVM\View\SearchView.xaml;MVVM\View\TopView.xaml;Themes\MenuButtonStyle.xaml;
 
 False
 

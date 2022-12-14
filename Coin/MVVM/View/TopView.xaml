@@ -7,16 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-    
+
 
         <ListBox Grid.Column="0" ItemsSource="{Binding Currencies}"
-                 SelectedItem="{Binding SelectedCurrency}">
+                 SelectedItem="{Binding SelectedCurrency}"
+                 Background="Transparent"
+                 BorderBrush="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=Name}" />
-                        <TextBlock Text="{Binding Path=Price}" />
-                    </StackPanel>
+                    <Border CornerRadius="10"
+                            Margin="3"
+                            Padding="5"
+                            Width="650">
+                        <Border.Background >
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                <GradientStop Color="#3aa0FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Margin="5">
+                            <TextBlock FontSize="18" Text="{Binding Path=Name}" />
+                            <TextBlock Text="{Binding Path=Price}" />
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

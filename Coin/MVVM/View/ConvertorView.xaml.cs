@@ -24,6 +24,7 @@ namespace Coin.MVVM.View
         public ConvertorView()
         {
             InitializeComponent();
+            
         }
      
     }

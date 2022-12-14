@@ -33,8 +33,5 @@
     <Page Update="Themes\MenuButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\TextBoxStyle.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>

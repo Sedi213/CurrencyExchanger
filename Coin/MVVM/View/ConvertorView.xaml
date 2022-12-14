@@ -7,9 +7,14 @@
              xmlns:model="clr-namespace:Coin.MVVM.Model"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
-    <Grid>
-        <StackPanel HorizontalAlignment="Center"  Margin="40" Background="DarkOrange" Orientation="Horizontal" VerticalAlignment="Top">
-           <ComboBox x:Name="ConverOn" ItemsSource="{Binding Currencies}" Height="25" Width="100" SelectedIndex="0" >
+    <Grid> 
+        <Border Background="DarkOrange"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                CornerRadius="30">
+        <StackPanel   Margin="20"  Orientation="Horizontal" >
+          
+           <ComboBox x:Name="ConverOn" ItemsSource="{Binding Currencies}" Height="25" Width="100" SelectedIndex="{Binding SelectedIndex1}" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Id}"></TextBlock>
@@ -23,23 +28,20 @@
             <Label x:Name="OutputLabel"
                    Margin="5"
                    VerticalAlignment="Center"
-                   Width="120"
+                   Width="150"
                    Content="{Binding Result}"/>
-            <ComboBox  x:Name="ConverTo" ItemsSource="{Binding Currencies}" Margin="15" Height="25" Width="100" SelectedIndex="0"  >
+            <ComboBox  x:Name="ConverTo" ItemsSource="{Binding Currencies}" 
+                       Margin="15" 
+                       Height="25" Width="100"
+                       SelectedIndex="{Binding SelectedIndex2}"  >
                 <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Path=Id}"></TextBlock>
-                    </DataTemplate>
-
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Id}"></TextBlock>
+                        </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
             
         </StackPanel>
-        <Button Content="Convert"
-                Width="100"
-                Height="50"
-                Command="{Binding ConvertCmd}"
-                >
-        </Button>
+        </Border>
     </Grid>
 </UserControl>

@@ -11,6 +11,8 @@ namespace Coin.MVVM.ViewModel.Core
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;
+     
+
 
         public event EventHandler CanExecuteChanged
         {
@@ -22,6 +24,7 @@ namespace Coin.MVVM.ViewModel.Core
         {
             this.execute = execute;
             this.canExecute = canExecute;
+            
         }
 
         public bool CanExecute(object parameter)

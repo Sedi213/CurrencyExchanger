@@ -21,7 +21,6 @@ C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\Coin.genruntimeco
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\ref\Coin.dll
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\Themes\MenuButtonStyle.baml
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\App.baml
-C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\Themes\TextBoxStyle.baml
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\MVVM\View\TopView.g.cs
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Sedma\source\repos\Coin\Coin\obj\Debug\net6.0-windows\MVVM\View\TopView.baml
